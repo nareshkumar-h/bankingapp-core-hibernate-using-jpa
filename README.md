@@ -90,7 +90,15 @@ Query createQuery = em.createQuery("from User u", User.class);
 List<User> userList = createQuery.getResultList();
 ```
 
-#### Find One
+#### Find by id
 ```
+int userId = 1;
 User user = em.find(User.class, userId);
+```
+#### Find by Name
+```
+String name = "naresh";
+Query createQuery = em.createQuery("from User u where name =?1", User.class);
+createQuery.setParameter(1, name);
+User user = (User) createQuery.getSingleResult();
 ```
