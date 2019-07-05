@@ -85,6 +85,7 @@ em.merge(user);
 em.remove(user);
 ```
 #### List
+```
 Query createQuery = em.createQuery("from User u", User.class);
 List<User> userList = createQuery.getResultList();
 ```
